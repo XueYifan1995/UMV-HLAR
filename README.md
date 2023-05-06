@@ -1,5 +1,5 @@
-# UMV BO_STLS
-This repository includes a novel, open-source, data-driven method for unmanned marine vehicle (UMV) dynamics model identification that incorporates physical a priori knowledge; and a generic program is written in MATLAB for the method.
+# UMV HLAR
+This repository includes a novel, open-source, data-driven method named Hydrodynamic dictionary Library-inspired Adaptive Regression (HLAR) for unmanned marine vehicle (UMV) dynamics model identification that incorporates physical a priori knowledge; and a generic program is written in MATLAB for the method.
 This method is inspired by SINDY (https://www.pnas.org/doi/10.1073/pnas.1906995116)(https://pysindy.readthedocs.io/en/latest/).
 ## Requirement
 A computer that can run matlab software version 2020 and above.
