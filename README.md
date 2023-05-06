@@ -20,7 +20,7 @@ To enhance the generalization of the model, 30% of the data were selected as the
 The STLS algorithm is used to discover the truly active terms from the hydrodynamic dictionary library; and the identification results are compared with the parametric and non-parametric model identification results respectively to verify the effectiveness of the method.
 
 The above process is summarized in the flow chart
-![image](https://github.com/XueYifan1995/BO_STLS/blob/master/image.png)
+![image](https://github.com/XueYifan1995/BO_STLS/blob/master/Flow_chart.png)
 
 
 
