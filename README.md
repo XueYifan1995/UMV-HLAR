@@ -8,7 +8,7 @@ A computer that can run matlab software version 2020 and above.
 If you find this package helpful, giving a "star" to this repositry will be a happy feedback for me! If you find a bug, or have more broader kind of quession about dynamic modeling of ,please post that in the issue page. I will try hard to respond to questions.
 
 ## Usage
-See 'self_library.m' to reproduce the results for unmanned surface vehicles. See 'SINDY_npsAUV_optim.m' to reproduce the results for unmanned underwater vehicles.
+See [self_library.m](/Surface%20Vehicle/self_library.m) to reproduce the results for unmanned surface vehicles. See [SINDY_npsAUV_optim.m](/Underwater%20Vehicle/SINDY_npsAUV_optim.m) to reproduce the results for unmanned underwater vehicles.
 
 ## Workflow of the proposed identification method
 The framework of the proposed approach is as follows.
@@ -20,7 +20,4 @@ To enhance the generalization of the model, 30% of the data were selected as the
 The STLS algorithm is used to discover the truly active terms from the hydrodynamic dictionary library; and the identification results are compared with the parametric and non-parametric model identification results respectively to verify the effectiveness of the method.
 
 The above process is summarized in the flow chart
-![image](https://github.com/XueYifan1995/BO_STLS/blob/master/Flow_chart.png)
-
-
-
+![image](/Flow_chart.png)
