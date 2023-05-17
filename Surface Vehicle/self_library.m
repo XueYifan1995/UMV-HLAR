@@ -1,3 +1,4 @@
+clc,clear,close all
 %% Import data
 load HSVACPMCKVLCC2Z1005 HSVACPMCKVLCC2Z1005    
 load HSVACPMCKVLCC2Z1001 HSVACPMCKVLCC2Z1001
@@ -69,7 +70,7 @@ yout = selfpooldatalist(Xi,LibraryType);
 n=4;
 Nvar = 3;
 tspan=[0];
-data_pre =  HSVACPMCKVLCC2Z3505;
+data_pre =  HSVACPMCKVLCC2Z2505;
 xv = [data_pre(1,5)-1.179,data_pre(1,6),data_pre(1,7)*pi/180];
 x_p(1,:)=xv;
 u_p = data_pre(:,9)*pi/180; 
@@ -99,12 +100,12 @@ GuassPreShip
 % Step1_dataconstruct3_new
 % Step2_main_new
 
-load U_pre_35 U_pre_35
-load V_pre_35 V_pre_35
-load R_pre_35 R_pre_35
-U_pre_semi = U_pre_35;
-V_pre_semi = V_pre_35;
-R_pre_semi = R_pre_35;
+load U_pre_25 U_pre_25
+load V_pre_25 V_pre_25
+load R_pre_25 R_pre_25
+U_pre_semi = U_pre_25;
+V_pre_semi = V_pre_25;
+R_pre_semi = R_pre_25;
 
 
 
@@ -119,7 +120,7 @@ hold on
 h2 = plot(tspan(1:3600),x_p(1:3600,1),'--','linewidth',1.5,'color',[0.93,0.69,0.13]);
 hold on
 h3 = plot(tspan(1:3600),U_pre_semi,'-.','linewidth',1.5,'color',[0.47,0.67,0.19]);
-legend([h1,h2,h3,h4],'Gaussian process','Proposed method','Semi-Abkowitz','Experiment')
+legend([h1,h2,h3,h4],'Gaussian process','Proposed HLAR method','Semi-Abkowitz','Experiment')
 axis([0 180 -inf inf])
 
 

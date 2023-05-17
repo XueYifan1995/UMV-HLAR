@@ -1,4 +1,4 @@
-clc,close all,clear
+clc,close all, clear
 %For each of the three methods, it is necessary to confirm that each method 
 % becomes the correct set of predictions when changing the prediction set
 load npsAUV_zigzag_1010_005p npsAUV_zigzag_1010_005p
@@ -6,14 +6,9 @@ load npsAUV_zigzag_2020_005p npsAUV_zigzag_2020_005p
 load npsAUV_zigzag_2505_005 npsAUV_zigzag_2505_005
 load npsAUV_zigzag_2510_005 npsAUV_zigzag_2510_005
 %% Get test data (ZigZag movement)
-time = 300;  %Simulation time
-rudder_1 = 5; %Rudder angle
-d_psi_1 = 25; %Expectation Angle
-[u_1,x_1] = zigzag(rudder_1,d_psi_1,time);
-x_1=[x_1(1,:);x_1(2,:);x_1(6,:)];  %Select u,v,r as state variables
-
+load npsAUV_zigzag_test npsAUV_zigzag_test
+x_1 = npsAUV_zigzag_test;
 %% Calculating the SINDY model
-
 % GetModelZigzag  %Get the best lamda
 xinput = [npsAUV_zigzag_1010_005p,npsAUV_zigzag_2020_005p];
 x_1_self = xinput(1:3,:);
@@ -62,26 +57,25 @@ yout = selfpooldatalist(Xi,LibraryType);
 Xi_sphs = Xi;
 
 %% Forecasting with Eulerian dispersion - SINDY
-GetModelZigzag_validation
+GetModel_validation
 
 %% Using the semi-conjugate plus PhD thesis model
-step1_doc
-step2_doc
-rmse_u_semi = sqrt(mean((x_1(1,:)-U_pre_doc').^2))
-rmse_v_semi = sqrt(mean((x_1(2,:)-V_pre_doc').^2))
-rmse_r_semi = sqrt(mean((x_1(3,:)-R_pre_doc').^2))
+load U_pre_doc U_pre_doc
+load V_pre_doc V_pre_doc
+load R_pre_doc R_pre_doc
+rmse_u_doc = sqrt(mean((x_1(1,:)-U_pre_doc').^2))
+rmse_v_doc = sqrt(mean((x_1(2,:)-V_pre_doc').^2))
+rmse_r_doc = sqrt(mean((x_1(3,:)-R_pre_doc').^2))
+
 
 %% Using the semi-conjugate Gashisenda model
-% step1_submarine
-% step2_submarine
-
 load U_pre_submarine U_pre_submarine
 load V_pre_submarine V_pre_submarine
 load R_pre_submarine R_pre_submarine
 
-rmse_u_semi = sqrt(mean((x_1(1,:)-U_pre_submarine').^2))
-rmse_v_semi = sqrt(mean((x_1(2,:)-V_pre_submarine').^2))
-rmse_r_semi = sqrt(mean((x_1(3,:)-R_pre_submarine').^2))
+rmse_u_submarine = sqrt(mean((x_1(1,:)-U_pre_submarine').^2))
+rmse_v_submarine = sqrt(mean((x_1(2,:)-V_pre_submarine').^2))
+rmse_r_submarine = sqrt(mean((x_1(3,:)-R_pre_submarine').^2))
 
 
 %% Final results show
@@ -94,7 +88,7 @@ xlabel('time (s)'),ylabel('u (m/s)');
 hold on
 h2 = plot(tspan,U_pre_submarine,'-.','linewidth',1.5,'color',[0.47,0.67,0.19]);
 h4 = plot(tspan,U_pre_doc,'linewidth',1.5,'color',[0,0.45,0.74]);
-legend([h1,h2,h3,h4],{'Proposed Method','Semi-Silvestre','Experiment','Semi-Gertler'})
+legend([h1,h2,h3,h4],{'Proposed HLAR Method','Semi-Silvestre','Experiment','Semi-Gertler'})
 axis([0 inf 1 1.6])
 grid on
 box off
