@@ -26,5 +26,25 @@ switch LibraryType
         newout{13,1} = ['1/u'];
         
         yout = newout 
-        
+    case 5
+        newout(1) = {''};  %Title bar
+        newout{1,2} = ['udot'];
+        newout{1,3} = ['vdot'];
+        newout{1,4} = ['rdot'];
+        for k=1:size(ahat,1)   %Identified data
+            for j=1:size(ahat,2)
+                newout{k+1,1+j} = ahat(k,j);
+            end
+        end
+        newout{2,1} = ['v'];
+        newout{3,1} = ['r'];
+        newout{4,1} = ['d'];
+        newout{5,1} = ['vv'];
+        newout{6,1} = ['vr'];
+        newout{7,1} = ['vd'];
+        newout{8,1} = ['rr'];
+        newout{9,1} = ['rd'];
+        newout{10,1} = ['dd'];
+    
+        yout = newout   %Displaying the dictionary library        
 end
