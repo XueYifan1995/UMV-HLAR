@@ -8,7 +8,7 @@ A computer that can run matlab software version 2020 and above.
 If you find this package helpful, giving a "star" to this repositry will be a happy feedback for me! If you find a bug, or have more broader kind of quession about dynamic modeling of ,please post that in the issue page. I will try hard to respond to questions.
 
 ## Usage
-Take the underwater vehicle as an example. Run the `GetModel.m` file to get the hyperparameters $\lambda$. Run the file several times to obtain stable values. Run the `SINDY_npsAUV_optim.m` file to get the simulation results for the NPS-AUV.
+Take the underwater vehicle as an example. Run the `GetModel.m` file to get the hyperparameters $\lambda$. Run the file several times to obtain stable values. Run the `SINDY_npsAUV_optim.m` file to get the simulation results for the NPS-AUV.Run the `HLAR_starsee.m` file to get the simulation results for the Star Ocean ⅡAUV.
 
 ## Workflow of the proposed identification method
 The framework of the proposed approach is as follows.
